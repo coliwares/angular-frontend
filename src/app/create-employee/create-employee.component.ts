@@ -20,12 +20,12 @@ export class CreateEmployeeComponent implements OnInit {
   onSubmit(){
     console.log('employee ', this.employee)
     this.saveEmployee();
-    this.goToEmployeeList();
   }
 
   saveEmployee(){
     this.employeeService.createEmployee(this.employee).subscribe( data => {
       console.log('employee ', this.employee)
+      this.goToEmployeeList();
     },
     error => console.log(error));
   }
